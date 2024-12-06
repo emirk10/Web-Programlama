@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mthng\\source\\repos\\BarberApp\\BarberApp\\BarberApp.csproj": {}
+    "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\BarberApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mthng\\source\\repos\\BarberApp\\BarberApp\\BarberApp.csproj": {
+    "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\BarberApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mthng\\source\\repos\\BarberApp\\BarberApp\\BarberApp.csproj",
+        "projectUniqueName": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\BarberApp.csproj",
         "projectName": "BarberApp",
-        "projectPath": "C:\\Users\\mthng\\source\\repos\\BarberApp\\BarberApp\\BarberApp.csproj",
-        "packagesPath": "C:\\Users\\mthng\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mthng\\source\\repos\\BarberApp\\BarberApp\\obj\\",
+        "projectPath": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\BarberApp.csproj",
+        "packagesPath": "C:\\Users\\İbrahim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mthng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\İbrahim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,18 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -64,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

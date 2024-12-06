@@ -40,7 +40,7 @@ ve yapay zeka entegrasyonu sayesinde kullanıcılar, fotoğraf yükleyerek saç 
 
 ## UML Şeması
 
-![UML Diyagramı](https://github.com/emirk10/Web-Programlama/blob/main/BarberApp/wwwroot/images/uml.jpg)
+![UML Diyagramı](https://github.com/Metehanglsr/Web-Programlama/raw/main/images/BarberAppUML.png)
 
 ## Kullanılacak Teknolojiler
 
