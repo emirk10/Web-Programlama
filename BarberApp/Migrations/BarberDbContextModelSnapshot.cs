@@ -91,6 +91,9 @@ namespace BarberApp.Migrations
                     b.Property<int?>("AdminID")
                         .HasColumnType("integer");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -281,6 +284,9 @@ namespace BarberApp.Migrations
 
                     b.Property<string>("Duration")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
