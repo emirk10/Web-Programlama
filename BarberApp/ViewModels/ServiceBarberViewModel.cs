@@ -2,10 +2,9 @@
 
 namespace BarberApp.ViewModels
 {
-    public class ServiceCategoryViewModel
+    public class ServiceBarberViewModel
     {
         public List<Service> Services { get; set; }
-        public List<Category> Categories { get; set; }
-
+        public List<Barber> Barbers { get; set; }
     }
 }

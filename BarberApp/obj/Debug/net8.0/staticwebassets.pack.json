@@ -21,6 +21,22 @@
       "PackagePath": "staticwebassets\\images\\appoin-banner-2.jpg"
     },
     {
+      "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\barber.png",
+      "PackagePath": "staticwebassets\\images\\barber.png"
+    },
+    {
+      "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\barber1.png",
+      "PackagePath": "staticwebassets\\images\\barber1.png"
+    },
+    {
+      "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\barber2.png",
+      "PackagePath": "staticwebassets\\images\\barber2.png"
+    },
+    {
+      "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\barber3.png",
+      "PackagePath": "staticwebassets\\images\\barber3.png"
+    },
+    {
       "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\footer-bg.png",
       "PackagePath": "staticwebassets\\images\\footer-bg.png"
     },

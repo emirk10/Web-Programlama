@@ -18,18 +18,18 @@ namespace BarberApp.Controllers
             var categories = _context.Categories.ToList();
             if (id != null)
             {
-                services = _context.Services.Include(x => x.Category).Where(x=>x.CategoryID == id).ToList();
+                services = _context.Services.Include(x => x.Category).Where(x => x.CategoryID == id).ToList();
             }
             else
             {
                 services = _context.Services.Include(x => x.Category).ToList();
             }
-            var ServiceCategoriesViewModel = new ServiceCategoryViewModel
+            var ServiceCategoruViewModel = new ServiceCategoryViewModel
             {
                 Categories = categories,
                 Services = services
             };
-            return View(ServiceCategoriesViewModel);
+            return View(ServiceCategoruViewModel);
         }
     }
 }
