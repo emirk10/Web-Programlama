@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\BarberSaloon.png",
+      "PackagePath": "staticwebassets\\images\\BarberSaloon.png"
+    },
+    {
       "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\appoin-banner-1.jpg",
       "PackagePath": "staticwebassets\\images\\appoin-banner-1.jpg"
     },

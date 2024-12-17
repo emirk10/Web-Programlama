@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KhPlFg0XtSJXaR+/u0QwkXnNFSq9s+2A0U6Xp1rBh8A=",
+  "Hash": "Fnx7NvqNPlRbJpBklEWaA8uGSHh8F5eb2psQ8BS2oHA=",
   "Source": "BarberApp",
   "BasePath": "_content/BarberApp",
   "Mode": "Default",
@@ -205,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\barber3.png"
+    },
+    {
+      "Identity": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\BarberSaloon.png",
+      "SourceId": "BarberApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\",
+      "BasePath": "_content/BarberApp",
+      "RelativePath": "images/BarberSaloon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\BarberSaloon.png"
     },
     {
       "Identity": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\footer-bg.png",

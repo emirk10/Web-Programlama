@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BarberApp.Migrations
 {
     /// <inheritdoc />
-    public partial class mig1 : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -70,7 +70,7 @@ namespace BarberApp.Migrations
                     ImageUrl = table.Column<string>(type: "text", nullable: true),
                     Specialization = table.Column<string>(type: "text", nullable: false),
                     Rating = table.Column<string>(type: "text", nullable: false),
-                    AdminID = table.Column<int>(type: "integer", nullable: true)
+                    AdminID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -79,7 +79,8 @@ namespace BarberApp.Migrations
                         name: "FK_Barbers_Admins_AdminID",
                         column: x => x.AdminID,
                         principalTable: "Admins",
-                        principalColumn: "AdminID");
+                        principalColumn: "AdminID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -92,7 +93,7 @@ namespace BarberApp.Migrations
                     ExpanseAmount = table.Column<float>(type: "real", nullable: false),
                     ExpanseDescription = table.Column<string>(type: "text", nullable: false),
                     ExpanseDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    AdminID = table.Column<int>(type: "integer", nullable: true)
+                    AdminID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -101,7 +102,8 @@ namespace BarberApp.Migrations
                         name: "FK_Expanses_Admins_AdminID",
                         column: x => x.AdminID,
                         principalTable: "Admins",
-                        principalColumn: "AdminID");
+                        principalColumn: "AdminID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -116,7 +118,7 @@ namespace BarberApp.Migrations
                     Duration = table.Column<string>(type: "text", nullable: false),
                     ImageUrl = table.Column<string>(type: "text", nullable: true),
                     CategoryID = table.Column<int>(type: "integer", nullable: false),
-                    AdminID = table.Column<int>(type: "integer", nullable: true)
+                    AdminID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -125,7 +127,8 @@ namespace BarberApp.Migrations
                         name: "FK_Services_Admins_AdminID",
                         column: x => x.AdminID,
                         principalTable: "Admins",
-                        principalColumn: "AdminID");
+                        principalColumn: "AdminID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Services_Categories_CategoryID",
                         column: x => x.CategoryID,
@@ -143,11 +146,18 @@ namespace BarberApp.Migrations
                     AppointmentDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Status = table.Column<int>(type: "integer", nullable: false),
                     CustomerID = table.Column<int>(type: "integer", nullable: false),
-                    BarberID = table.Column<int>(type: "integer", nullable: false)
+                    BarberID = table.Column<int>(type: "integer", nullable: false),
+                    AdminID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Appointments", x => x.AppointmentID);
+                    table.ForeignKey(
+                        name: "FK_Appointments_Admins_AdminID",
+                        column: x => x.AdminID,
+                        principalTable: "Admins",
+                        principalColumn: "AdminID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Appointments_Barbers_BarberID",
                         column: x => x.BarberID,
@@ -236,6 +246,11 @@ namespace BarberApp.Migrations
                         principalColumn: "ServiceID",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Appointments_AdminID",
+                table: "Appointments",
+                column: "AdminID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Appointments_BarberID",

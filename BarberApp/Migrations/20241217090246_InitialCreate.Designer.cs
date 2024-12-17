@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BarberApp.Migrations
 {
     [DbContext(typeof(BarberDbContext))]
-    [Migration("20241210100550_mig-1")]
-    partial class mig1
+    [Migration("20241217090246_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,6 +62,9 @@ namespace BarberApp.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("AppointmentID"));
 
+                    b.Property<int>("AdminID")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("AppointmentDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -75,6 +78,8 @@ namespace BarberApp.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("AppointmentID");
+
+                    b.HasIndex("AdminID");
 
                     b.HasIndex("BarberID");
 
@@ -91,7 +96,7 @@ namespace BarberApp.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("BarberID"));
 
-                    b.Property<int?>("AdminID")
+                    b.Property<int>("AdminID")
                         .HasColumnType("integer");
 
                     b.Property<string>("ImageUrl")
@@ -182,7 +187,7 @@ namespace BarberApp.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ExpanseID"));
 
-                    b.Property<int?>("AdminID")
+                    b.Property<int>("AdminID")
                         .HasColumnType("integer");
 
                     b.Property<float>("ExpanseAmount")
@@ -275,7 +280,7 @@ namespace BarberApp.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ServiceID"));
 
-                    b.Property<int?>("AdminID")
+                    b.Property<int>("AdminID")
                         .HasColumnType("integer");
 
                     b.Property<int>("CategoryID")
@@ -325,6 +330,12 @@ namespace BarberApp.Migrations
 
             modelBuilder.Entity("BarberApp.Models.Appointment", b =>
                 {
+                    b.HasOne("BarberApp.Models.Admin", null)
+                        .WithMany("Appointments")
+                        .HasForeignKey("AdminID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BarberApp.Models.Barber", "Barber")
                         .WithMany("Appointments")
                         .HasForeignKey("BarberID")
@@ -346,14 +357,18 @@ namespace BarberApp.Migrations
                 {
                     b.HasOne("BarberApp.Models.Admin", null)
                         .WithMany("Barbers")
-                        .HasForeignKey("AdminID");
+                        .HasForeignKey("AdminID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BarberApp.Models.Expanse", b =>
                 {
                     b.HasOne("BarberApp.Models.Admin", null)
                         .WithMany("Expanses")
-                        .HasForeignKey("AdminID");
+                        .HasForeignKey("AdminID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BarberApp.Models.Review", b =>
@@ -390,7 +405,9 @@ namespace BarberApp.Migrations
                 {
                     b.HasOne("BarberApp.Models.Admin", null)
                         .WithMany("Services")
-                        .HasForeignKey("AdminID");
+                        .HasForeignKey("AdminID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("BarberApp.Models.Category", "Category")
                         .WithMany("Services")
@@ -422,6 +439,8 @@ namespace BarberApp.Migrations
 
             modelBuilder.Entity("BarberApp.Models.Admin", b =>
                 {
+                    b.Navigation("Appointments");
+
                     b.Navigation("Barbers");
 
                     b.Navigation("Expanses");

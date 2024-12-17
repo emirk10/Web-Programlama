@@ -26,12 +26,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\İbrahim\Desktop\Web-Programlama\BarberApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/İbrahim/Desktop/Web-Programlama/BarberApp/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/İbrahim/Desktop/Web-Programlama/BarberApp/Views/Appointment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/İbrahim/Desktop/Web-Programlama/BarberApp/Views/Barbers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFyYmVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/İbrahim/Desktop/Web-Programlama/BarberApp/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/İbrahim/Desktop/Web-Programlama/BarberApp/Views/Home/Index.cshtml]
@@ -48,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/İbrahim/Desktop/Web-Programlama/BarberApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/İbrahim/Desktop/Web-Programlama/BarberApp/Views/Shared/_adminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9hZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/İbrahim/Desktop/Web-Programlama/BarberApp/Views/Shared/_ValidationScriptsPartial.cshtml]
