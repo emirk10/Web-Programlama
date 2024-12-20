@@ -109,6 +109,10 @@
       "PackagePath": "staticwebassets\\images\\pricing-bg.jpg"
     },
     {
+      "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\randomimage.jpg",
+      "PackagePath": "staticwebassets\\images\\randomimage.jpg"
+    },
+    {
       "Id": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,0 +1,28 @@
+﻿@model List<Barber>
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show my-5 container" role="alert">
+        <strong>Hata!</strong> @TempData["msg"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<section class="container my-5">
+    @foreach (var barber in Model)
+    {
+        <div class="border d-flex row my-5">
+            <div class="col-md-4">
+                <img src="~/images/@barber.ImageUrl" class="card-img-top img-fluid" style="width: 15rem;" alt="">
+            </div>
+            <div class="col-md-8">
+                <p><strong>Name:  </strong> @barber.Name @barber.Surname</p>
+                <p><strong>Phone Number:  </strong> @barber.PhoneNumber</p>
+                <p><strong>Specialization:  </strong> @barber.Specialization</p>
+                <p><strong>Rating:  </strong> @barber.Rating</p>
+                <a class="btn btn-outline-info" asp-action="EditBarber" asp-controller="Admin" asp-route-id="@barber.BarberID">Edit</a>
+                <a class="btn btn-danger" asp-action="DeleteBarber" asp-controller="Admin" asp-route-id="@barber.BarberID">X</a>
+            </div>
+        </div>
+    }
+</section>

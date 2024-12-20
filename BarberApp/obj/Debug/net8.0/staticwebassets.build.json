@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Fnx7NvqNPlRbJpBklEWaA8uGSHh8F5eb2psQ8BS2oHA=",
+  "Hash": "/M+dMrfjk1LZuvYzxWJy9XGvasDLmohFk1EwA+lQj6s=",
   "Source": "BarberApp",
   "BasePath": "_content/BarberApp",
   "Mode": "Default",
@@ -547,6 +547,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\pricing-bg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\images\\randomimage.jpg",
+      "SourceId": "BarberApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\",
+      "BasePath": "_content/BarberApp",
+      "RelativePath": "images/randomimage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\randomimage.jpg"
     },
     {
       "Identity": "C:\\Users\\İbrahim\\Desktop\\Web-Programlama\\BarberApp\\wwwroot\\js\\site.js",
