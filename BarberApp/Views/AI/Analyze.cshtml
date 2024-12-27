@@ -1,0 +1,18 @@
+﻿@model BarberApp.Models.ImageViewModel
+
+@{
+    ViewData["Title"] = "Image Analysis Result";
+}
+
+<h1>Image Analysis Result</h1>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+@if (Model?.ImageText != null)
+{
+    <h2>Result:</h2>
+    <p>@Model.ImageText</p>
+}

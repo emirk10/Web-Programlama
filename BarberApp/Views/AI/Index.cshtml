@@ -1,0 +1,23 @@
+﻿@model BarberApp.Models.ImageViewModel
+
+@{
+    ViewData["Title"] = "Image Processing";
+}
+
+<h1>Image Processing</h1>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<form method="post" asp-action="ProcessImage" enctype="multipart/form-data">
+    <input type="file" name="imageFile" accept="image/*" />
+    <button type="submit">Gönder</button>
+</form>
+
+@if (Model?.ImageText != null)
+{
+    <h2>Result:</h2>
+    <p>@Model.ImageText</p>
+}

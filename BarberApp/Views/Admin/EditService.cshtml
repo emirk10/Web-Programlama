@@ -8,6 +8,8 @@
 
 
 <div class="container">
+    <a asp-action="Index" asp-controller="Admin" class="btn-primary btn">Go Back</a>
+
     <form asp-action="EditService" asp-controller="Admin" method="post">
         <!-- Service Name -->
         <h2 class="my-3">Create Service</h2>
@@ -46,7 +48,7 @@
                 <option disabled>Select a category</option>
                 @foreach (var category in categories)
                 {
-                    if(category.Name == service.Category.Name)
+                    if (category.Name == service.Category.Name)
                     {
                         <option value="@category.CategoryID" selected>@category.Name</option>
                     }
