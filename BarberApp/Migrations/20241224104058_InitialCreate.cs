@@ -256,6 +256,7 @@ namespace BarberApp.Migrations
                 {
                     ReviewID = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Rating = table.Column<string>(type: "text", nullable: false),
                     Comment = table.Column<string>(type: "text", nullable: false),
                     ReviewDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CustomerID = table.Column<int>(type: "integer", nullable: false),

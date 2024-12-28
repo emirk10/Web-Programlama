@@ -1,23 +1,43 @@
-﻿@model BarberApp.Models.ImageViewModel
+﻿@model ImageViewModel
 
-@{
-    ViewData["Title"] = "Image Processing";
-}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">Image Processing</h1>
 
-<h1>Image Processing</h1>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger text-center">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
 
-@if (ViewBag.ErrorMessage != null)
-{
-    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
-}
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="post" asp-action="ProcessImage" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="imageFile" class="form-label">Upload an Image</label>
+                            <input type="file"
+                                   class="form-control"
+                                   id="imageFile"
+                                   name="imageFile"
+                                   accept="image/*"
+                                   required />
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-<form method="post" asp-action="ProcessImage" enctype="multipart/form-data">
-    <input type="file" name="imageFile" accept="image/*" />
-    <button type="submit">Gönder</button>
-</form>
-
-@if (Model?.ImageText != null)
-{
-    <h2>Result:</h2>
-    <p>@Model.ImageText</p>
-}
+            @if (Model?.ImageText != null)
+            {
+                <div class="mt-4 p-3 border rounded bg-light">
+                    <h2 class="text-center">Result:</h2>
+                    <p class="text-center">@Model.ImageText</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

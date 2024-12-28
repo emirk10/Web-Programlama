@@ -6,13 +6,13 @@ using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
 });
 
-// Add DbContext with Npgsql configuration
+builder.Services.AddHttpClient();
+
 builder.Services.AddDbContext<BarberDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
@@ -29,8 +29,6 @@ builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
 .AddEntityFrameworkStores<BarberDbContext>()
 .AddDefaultTokenProviders();
 
-
-// Configure cookie settings
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
@@ -44,12 +42,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     };
 });
 
-// HttpClientFactory'i ekle
-builder.Services.AddHttpClient();
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -64,6 +58,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");  // controller'ý AI olarak güncelledik
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BarberApp.Models;
-using System.Net.Http;
-using System.Text;
+﻿using BarberApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using System.IO;
-using System.Net.Http.Json;
+using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BarberApp.Controllers
 {
+    [Authorize]
     public class AIController : Controller
     {
-        private readonly string _apiKey = "AIzaSyCGxtBMZLe0AX-wrLI2gS_ARVYunQjG6nY"; // API anahtarınızı buraya girin
+        private readonly string _apiKey = "AIzaSyCGxtBMZLe0AX-wrLI2gS_ARVYunQjG6nY";
         private readonly HttpClient _httpClient;
 
         public AIController(IHttpClientFactory httpClientFactory)
@@ -50,7 +49,7 @@ namespace BarberApp.Controllers
                                   {
                                        new
                                        {
-                                        text = "Give this person only just a haircut suggest. Just use 2 or 3  sentences."
+                                        text = "Give this person only just a haircut suggest. Just use 3 or 4  sentences."
                                        },
                                         new
                                         {
@@ -75,18 +74,18 @@ namespace BarberApp.Controllers
                     if (apiResponse != null && apiResponse.candidates != null && apiResponse.candidates.Length > 0 && apiResponse.candidates[0].content != null && apiResponse.candidates[0].content.parts.Length > 0)
                     {
                         var generatedText = apiResponse.candidates[0].content.parts[0].text;
-                        return View("Analyze", new ImageViewModel { ImageText = generatedText });
+                        return View("Analyze", new ImageViewModel { ImageText = generatedText, ImageBase64 = base64Image });
                     }
                     else
                     {
-                        ViewBag.ErrorMessage = "API'den geçersiz bir yanıt alındı.";
+                        ViewBag.ErrorMessage = "An invalid response was received from the API.";
                         return View("Index");
                     }
                 }
             }
             catch (Exception ex)
             {
-                ViewBag.ErrorMessage = $"Bir hata oluştu: {ex.Message}";
+                ViewBag.ErrorMessage = $"An error occurred: {ex.Message}";
                 return View("Index");
             }
         }
